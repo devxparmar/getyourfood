@@ -171,7 +171,7 @@ def print(sno):
     food2 = food.query.filter_by(sno=sno).first()
     return render_template('pdf.htm' , food2 = food2)
 if __name__=="__main__":
-    app.run(debug=True,port=5000)
+    app.run(debug=True,port=8000)
    
     
     
