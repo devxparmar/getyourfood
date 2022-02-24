@@ -1,0 +1,268 @@
+<html>
+   <head>
+      <style>
+         body{
+         background-image: url(/static/bg_header.jpg);no-repeat center center fixed; 
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+         background-repeat: no-repeat;
+         }
+         .d
+         {
+         border-radius:2%;
+         margin-top: 40px;
+         width:700px;
+         opacity:1.0;
+         padding: 30px;
+         }
+         input[type=textbox], input[type=password], textarea , input[type=number] ,input[type=email] , input[type=tel]{
+         width: 100%;
+         padding: 15px;
+         margin: 5px 0 22px 0;
+         color:white;
+         display: inline-block;
+         border-style: solid;
+         border-color:white;
+         border-width:1px;
+         background-color: rgba(0,0,0, 0.3);
+         }
+         input[type=textbox]:focus, textarea:focus, input[type=number]:focus , input[type=email]:focus , input[type=tel]:focus{
+         background-color: rgba(0,0,0,0.5);
+         border-style: solid;
+         border-color:rgb(0,0,0,0.7);
+         border-width:2px;
+         outline: none;
+         color:white;
+         }
+         .registerbtn {
+         background-color: #4CAF50;
+         color: white;
+         padding: 15px 20px;
+         margin: 8px 0;
+         border: none;
+         cursor: pointer;
+         width: 50%;
+         opacity: 0.9;
+         }
+         .registerbtn1 {
+         background-color: red;
+         color: white;
+         padding: 15px 20px;
+         margin: 8px 0;
+         border: none;
+         cursor: pointer;
+         width: 50%;
+         opacity: 0.9;
+         }
+         h1{
+         text-shadow: 2px 2px 5px gray;
+         opacity: 0.85;
+         }
+      </style>
+      <meta charset="utf-8">
+      <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+      <link rel="shortcut icon" href="static\gt_favicon.png">
+      <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="static/bootstrap.min.css">
+      <link rel="stylesheet" href="static/bootstrap-theme.css" media="screen" >
+      <link rel="stylesheet" href="static/main.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   </head>
+   <body class="home" id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="57">
+      <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+         <div class="container">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="#page-top">GetYourFood</a>
+            </div>
+            <div class="navbar-collapse collapse">
+               <ul class="nav navbar-nav pull-right">
+                  <li class="active"><a href="/protected_index"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                  <!-- <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activity<span class="caret"></span></a>
+                     <ul class="dropdown-menu"> -->
+                        <li><a href="/donate_food">Donate Food</a></li>
+                            <li><a href="/collect_food">Collect Food</a></li>
+                     <!-- </ul>
+                  </li> -->
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-fw fa-user"></i> {{email}}<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                       <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div><!--/.nav-collapse -->
+         </div>
+      </div> 
+      <br>
+      <br>
+      <br>
+      <center>
+      <div class="d">
+         <center>
+            <img src="/static/Donate.png">
+         </center>
+         <br>
+         <form  action = "{{ request.path }}" method="post" name="frm1">
+            <div align="center">
+               <table border="0" >
+                  <tbody>
+                     <tr style="">
+                        <td>
+                        </td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="">
+                                 &nbsp;
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;"> <input name="txt1" placeholder= "Name" type="textbox" required> </td>
+                     </tr>
+                     <tr style="">
+                        <td></td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="">
+                                 &nbsp;
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;"> <input name="txt2" placeholder= "Phone" minlength=10 maxlength=10 type="tel" required> </td>
+                     </tr>
+                     <tr style="">
+                        <td></td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="">
+                                 &nbsp;
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;"> <input name="txt3" placeholder= "Email" type="email"> </td>
+                     </tr>
+                     <tr style="">
+                        <td style="padding: 0.75pt;"></td>
+                        <td style="padding: 0.75pt;"></td>
+                        <td style="padding: 0.75pt;"></td>
+                     </tr>
+                     <tr>
+                        <td></td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span>
+                                 &nbsp;
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="">
+                                 <font color="white">
+                                    <textarea rows="5" cols="70" placeholder= "Address" name="txt4" required></textarea>
+                                 </font>
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr style="">
+                        <td></td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="">
+                                 &nbsp;
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;">
+                          <p>
+                             <span style="">
+                                <input placeholder= "City" name="txt5" type="textbox" required>
+                                <o:p></o:p>
+                             </span>
+                          </p>
+                       </td>
+                     </tr>
+                     <tr style="">
+                      <td></td>
+                      <td style="padding: 0.75pt;">
+                         <p>
+                            <span style="">
+                               &nbsp;
+                               <o:p></o:p>
+                            </span>
+                         </p>
+                      </td>
+                      <td style="padding: 0.75pt;">
+                        <p>
+                           <span style="">
+                              <input placeholder= "State" name="txt6" type="textbox" required>
+                              <o:p></o:p>
+                           </span>
+                        </p>
+                     </td>
+                   </tr>
+                   <tr style="">
+                    <td></td>
+                    <td style="padding: 0.75pt;">
+                       <p>
+                          <span style="">
+                             &nbsp;
+                             <o:p></o:p>
+                          </span>
+                       </p>
+                    </td>
+                    <td style="padding: 0.75pt;">
+                      <p>
+                         <span style="">
+                            <input placeholder= "Quantity" name="txt7" type="number" min=1 required></input>
+                            <o:p></o:p>
+                         </span>
+                      </p>
+                   </td>
+                 </tr>
+                     <tr style="">
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="font-size: 16pt; font-family: Abaddon&#8482;;">
+                                 &nbsp;
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              &nbsp;
+                              <o:p></o:p>
+                           </p>
+                        </td>
+                        <td style="padding: 0.75pt;">
+                           <p>
+                              <span style="">
+                                 <input class="registerbtn1" name="cmdSubmit" value="Submit" type="submit"><input class="registerbtn" value="Reset" name="cmdreset" type="reset">
+                                 <o:p></o:p>
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </form>
+      </div>
+      </center>
+   </body>
+</html>
